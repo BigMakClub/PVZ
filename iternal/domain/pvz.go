@@ -1,4 +1,4 @@
-package pvz
+package domain
 
 import (
 	"errors"

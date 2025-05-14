@@ -1,9 +1,8 @@
-package reception
+package domain
 
 import (
 	"errors"
 	"github.com/google/uuid"
-	"pvz/iternal/domain/pvz"
 	"time"
 )
 
@@ -21,12 +20,12 @@ var (
 
 type Reception struct {
 	Id       uuid.UUID
-	DateTime time.Time
 	PvzId    uuid.UUID
 	Status   Status
+	DateTime time.Time
 }
 
-func NewReception(pvz pvz.PVZ) *Reception {
+func NewReception(pvz PVZ) *Reception {
 	return &Reception{
 		Id:       uuid.New(),
 		DateTime: time.Now(),

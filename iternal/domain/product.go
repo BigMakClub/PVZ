@@ -1,9 +1,8 @@
-package product
+package domain
 
 import (
 	"errors"
 	"github.com/google/uuid"
-	"pvz/iternal/domain/reception"
 	"time"
 )
 
@@ -32,7 +31,7 @@ type Product struct {
 	ReceptionID uuid.UUID
 }
 
-func NewProduct(productType ProductType, reception reception.Reception) (*Product, error) {
+func NewProduct(productType ProductType, reception Reception) (*Product, error) {
 	if !productType.IsValid() {
 		return nil, ErrProductIsNotValid
 	}
